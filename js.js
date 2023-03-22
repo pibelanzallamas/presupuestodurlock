@@ -1,27 +1,44 @@
 function mostrar(){
+    //bienvenida
+    alert('Presupuesto Durlock 💀🤙 Castill0.666. Derechos Reservados. @2023.');
+    
     //inputs
-    let mCuadrados = prompt("ingrese metros cuadrados: ");
-    let precioPlaca = prompt("ingrese precio de la placa: ");
-    let precioPerfil = prompt("ingrese precio del perfil: ");
-    let precioTorni = prompt("ingrese precio de tornillos: ");
+    let mCuadrados;
+    let precioPlaca;
+    let precioPerfil;
+    let precioTorni;
+
+    do{
+        mCuadrados = prompt("Ingrese metros cuadros total 🤑: ");
+    }while((mCuadrados < 1 || mCuadrados > 10000000) || (isNaN(mCuadrados)));
+    do{
+        precioPlaca = prompt("Ingrese precio de placa c/u 🚪: ");
+    }while((precioPlaca < 1000 || precioPlaca > 100000) || (isNaN(precioPlaca)));
+    do{
+        precioPerfil = prompt("Ingrese precio de perfil c/u 📏: ");
+    }while((precioPerfil < 400 || precioPerfil > 100000) || (isNaN(precioPerfil)));
+    do{
+        precioTorni = prompt("Ingrese precio de tornillos c/u 🔩: ");
+    }while((precioTorni < 1 || precioTorni > 1000) || (isNaN(precioTorni)));
     
     //cantidades
     let m2Placa = 2.88;
     let cantPlacas = mCuadrados / m2Placa;
-    cantPlacas = Math.ceil(cantPlacas);
+        cantPlacas = Math.ceil(cantPlacas);
+        cantPlacas = parseInt(cantPlacas);
     let cantPerfiles = cantPlacas * 3;
-    let cantTornillos = 28 * cantPlacas;
+    let cantTornillos = cantPlacas * 30;
 
-    //precios
-    let totalPlacas = precioPlaca * parseInt(cantPlacas);
-    let totalPerfiles = precioPerfil * (parseInt(cantPlacas) * 3);
+    //procesamientos
+    let totalPlacas = precioPlaca * cantPlacas;
+    let totalPerfiles = precioPerfil * cantPerfiles;
     let totalTorni = precioTorni * cantTornillos;
     let total = totalPerfiles + totalPlacas;
 
-    //alerts
-    alert(`se necesitan aprox ${cantPlacas} placas, ${cantPerfiles} perfiles y ${cantTornillos} tornillos
-total: ${total}, 
-placas: ${totalPlacas}
-perfiles: ${totalPerfiles}
-tornillos: ${totalTorni}`);
+    //outputs
+    alert(`Para hacer ${mCuadrados} metros cuadrados se necesita: 🛠
+🚪${cantPlacas} Placas: $${totalPlacas}
+📏${cantPerfiles} Perfiles: $${totalPerfiles}
+🔩${cantTornillos} Tornillos: $${totalTorni}
+💵Precio Total : $${total}`);
 };
