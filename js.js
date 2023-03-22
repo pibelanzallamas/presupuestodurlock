@@ -16,7 +16,7 @@ function mostrar(){
     }while((precioPlaca < 1000 || precioPlaca > 100000) || (isNaN(precioPlaca)));
     do{
         precioPerfil = prompt("Ingrese precio de perfil c/u 📏: ");
-    }while((precioPerfil < 400 || precioPerfil > 100000) || (isNaN(precioPerfil)));
+    }while((precioPerfil < 100 || precioPerfil > 100000) || (isNaN(precioPerfil)));
     do{
         precioTorni = prompt("Ingrese precio de tornillos c/u 🔩: ");
     }while((precioTorni < 1 || precioTorni > 1000) || (isNaN(precioTorni)));
@@ -40,5 +40,5 @@ function mostrar(){
 🚪${cantPlacas} Placas: $${totalPlacas}
 📏${cantPerfiles} Perfiles: $${totalPerfiles}
 🔩${cantTornillos} Tornillos: $${totalTorni}
-💵Precio Total : $${total}`);
+💵 Precio Total : $${total}`);
 };
