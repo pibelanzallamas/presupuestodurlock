@@ -36,9 +36,9 @@ function mostrar(){
     let total = totalPerfiles + totalPlacas;
 
     //outputs
-    alert(`Para hacer ${mCuadrados} metros cuadrados se necesita 🛠:
+    alert(`Para hacer ${mCuadrados} metros cuadrados se necesita: 🛠
 🚪${cantPlacas} Placas: $${totalPlacas}
 📏${cantPerfiles} Perfiles: $${totalPerfiles}
 🔩${cantTornillos} Tornillos: $${totalTorni}
-💵 Precio Total : $${total}`);
+🤑 Precio Total : $${total}`);
 };
